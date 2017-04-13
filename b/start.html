@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Module JS Application</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/application.css" rel="stylesheet" media="screen">
+		<script data-main="js/init" src="js/library/require.js"></script>
+	</head>
+	<body>
+		<div id="container" class="container">
+			<div class="row header">
+				<div class="span12">
+				<h2>Модульное приложение на Java Script</h2>
+			</div>
+		</div>
+
+		<div id="main-content" class="row main-content" ></div>
+			<div class="row footer">
+				<div class="span12">
+					<h4>Или как подружыть Backbone с RequireJS </h4>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/template" id="main-page"> 
+			<div class="main-page">
+				<div class="span4 main_menu">
+					<ul class="nav nav-list">
+						<li class="nav-header">Шпаргалка для новичков</li>
+						<li class="divider"></li>
+						<li>
+							<ul class="nav nav-list">
+								<li><a href=""> <i class="icon-th-list"> </i> Главная </a></li>
+								<li><a href="#page/1"> <i class="icon-th-list"> </i> Страница 1 </a></li>
+								<li><a href="#page/2"> <i class="icon-th-list"> </i> Страница 2 </a></li>
+								<li><a href="#page/3"> <i class="icon-th-list"> </i> Страница 3 </a></li>
+								<li><a href="#page/4"> <i class="icon-th-list"> </i> Страница 4 </a></li>
+								<li><a href="#page/5"> <i class="icon-th-list"> </i> Страница 5 </a></li>
+								<li><a href="#page/6"> <i class="icon-th-list"> </i> Страница 6 </a></li>
+								<li><a href="#page/7"> <i class="icon-th-list"> </i> Страница 7 </a></li>
+								<li><a href="#page/8"> <i class="icon-th-list"> </i> Страница 8 </a></li>
+								<li><a href="#page/9"> <i class="icon-th-list"> </i> Страница 9 </a></li>
+								<li><a href="#result"> <i class="icon-th-list"> </i> Результат </a></li>
+							</ul>
+						</li>
+						<li class="divider"></li>
+					</ul>
+				</div>
+
+				<div class="span8 menu-page">
+					<h4>Главная страница</h4>
+					<div class="description">Приложение создано для демонстрации работы библиотеки RequireJS
+						<br/>История переходов по пунктам меню запоминаеться в кэше браузера. 
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<script type="text/template" id="page"> 
+			<div class="page"> Страница <%= page %>	</div>
+		</script>
+
+	</body>
+
+</html>

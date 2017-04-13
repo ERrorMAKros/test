@@ -1,0 +1,99 @@
+@import "./../base.less";
+
+.m3u-file-name ,
+.uploader-table th {
+  text-align: center ;
+}
+
+.uploader-table .ant-table-expanded-row ,
+.uploader-table .ant-table-expanded-row .ant-table-expanded-row:hover ,
+.uploader-table .ant-table-expanded-row:hover td,
+.ant-table-expanded-row,
+.ant-table-expanded-row:hover {
+  background: none ! important ;
+}
+
+.uploader-table .ant-table-expanded-row > td:last-child {
+  padding: 0 ;
+}
+.uploader-table .ant-table-expanded-row > td:last-child .ant-table-thead th {
+  border: none ;
+}
+.uploader-table .ant-table-expanded-row > td:last-child .ant-table-thead th:first-child {
+  padding-left: 0;
+}
+.uploader-table .ant-table-expanded-row > td:last-child .ant-table-row td:first-child {
+  padding-left: 0;
+}
+.uploader-table .ant-table-expanded-row .ant-table-row:last-child td {
+  border: none;
+}
+
+.uploader-table .ant-table-expanded-row td ,
+.uploader-table .ant-table-expanded-row .ant-table-tbody > tr > td,
+.uploader-table .ant-table-expanded-row .ant-table-bordered .ant-table-thead > tr > th ,
+.uploader-table .ant-table-expanded-row .ant-table ,
+.uploader-table .ant-table-expanded-row .ant-table tr td {
+  border: none ! important;
+}
+.uploader-table .ant-progress {
+  padding: 0 1em ;
+}
+
+.m3u-list ,
+.m3u-list td {
+  background-color: transparent ;
+}
+
+.m3u-list.lightbar:hover td ,
+.m3u-list.lightbar:focus td ,
+.m3u-list.lightbar:active td {
+  background-color: @highlight-color ! important ;
+}
+
+.playlist-name {
+  font-weight: bold;
+}
+.table-expanded {
+  background-color: transparent ;
+}
+
+.uploader-table .ant-pagination li {
+  background: none;
+}
+
+
+.uploader-table .ant-pagination-disabled {
+  color: @color-gray-3 ;
+}
+.uploader-table .ant-pagination-prev ,
+.uploader-table .ant-pagination-next {
+  color: @color-gray-1 ;
+}
+.uploader-table .ant-pagination-item-active {
+  color: @primary-color ;
+}
+
+.ant-table-title .ant-upload {
+  display: block;
+}
+.ant-table-title .ant-upload ,
+.ant-table-title .ant-upload .button-upload-file {
+  width: 100% ;
+  background-color: @green-6 ;
+  color: @text-color ;
+}
+
+.uploader-table .uploading-item {
+  text-align: center ;
+  width: 100% ;
+}
+.uploader-table .uploading-item.status-0 {
+  color: @warning-color ;
+}
+.uploader-table .uploading-item.status-1 {
+  color: @primary-color ;
+}
+.uploader-table .uploading-item.status-2 {
+  color: @success-color ;
+}

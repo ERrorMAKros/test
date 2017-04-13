@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Backbone DEMO</title>
+		<script src="src/js/jquery.3.0.0.js"></script>
+		<script src="src/js/underscore.1.8.3.js"></script>
+		<script src="src/js/backbone.1.3.3.js"></script>
+		<script src="src/Main.js"></script>
+	</head>
+	<body>
+		
+		<form id="add" action="">
+			<input id="name" variable type="text" placeholder="Имя" value="Иван" />
+			<input id="age" variable type="number" placeholder="Возраст" value="15" />
+			<input id="job" variable type="text" placeholder="Работа" value="Футболист" />
+			<input type="submit" value="добавить">
+		</form>
+		
+		<p id="errors"></p>
+		
+		<script id="content" type="text/template">
+			<%= name %> (<%= age %>) <%= job %>
+			<button class="rename">rename</button>
+			<button class="remove">x</button>
+		</script>
+	</body>
+</html>
+

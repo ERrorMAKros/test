@@ -1,0 +1,23 @@
+body {
+	background-color: white;
+	font-family: Arial, sans-serif;
+	font-size:11px;
+	line-height: 14px;
+	padding: 0 ;
+	margin: 0 ;
+}
+#container {
+    color: white ;
+}
+.box {
+	background-color: transparent ;
+}
+.size21, .size22, .size23 {
+	background: #8c8a89 ;
+}
+.size31, .size32 {
+	background: #B4B2AE ;
+}
+.size33 {
+    background: #6a97cd ;
+}

@@ -1,0 +1,45 @@
+@import "./../base.less";
+
+.connect-ui {
+  background: none ;
+  padding: 1em;
+}
+.connect-ui .host {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+.connect-ui .host:hover ,
+.connect-ui .host:active ,
+.connect-ui .host:focus {
+  border: 1px solid @color-gray-4 ;
+}
+
+.connect-ui .ant-input-group .ant-input-group-addon {
+  background-color: transparent;
+}
+.connect-ui .button-connect {
+  background-color: @green-6 ;
+  color: white ;
+  border-color: white ;
+}
+.connect-ui .button-connect:hover ,
+.connect-ui .button-connect:active ,
+.connect-ui .button-connect:focus {
+  background-color: @green-6 ;
+  color: @text-color ;
+  border-color: @green-6 ;
+}
+
+.connect-ui .ant-alert-error {
+  margin-top: 1em ;
+  background-color: @error-color ;
+  color: @text-color ;
+}
+.connect-ui .ant-alert-error .ant-alert-icon ,
+.connect-ui .ant-alert-error .ant-alert-message {
+  color: @text-color ;
+}

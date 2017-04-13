@@ -1,0 +1,68 @@
+@import "./../node_modules/antd/dist/antd.less";
+
+body ,
+#stage {
+  margin: 0;
+  height: 100% ;
+}
+
+.login {
+  margin-top: 10%;
+  width: 100%;
+  text-align: center;
+}
+.login > button {
+  width: 190px ! important ;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper .header {
+  text-align: center ;
+  font-weight: 700 ;
+  height: 30px;
+  background-color: #eee;
+}
+.wrapper .header > img {
+  padding:  1em ;
+  width: 26px ;
+  height: 26px ;
+}
+
+.wrapper .content {
+  flex: 1;
+  background-color: white ;
+}
+.wrapper .content .waiting-for-players {
+  text-align: center ;
+}
+.wrapper .content .game-finished,
+.wrapper .content .remote-timer {
+  color: green;
+  padding-top: 1em ;
+  width: 100%;
+  text-align: center ;
+  font-size: 4em;
+  font-family: 'Arial';
+  font-weight: 700;
+}
+
+.wrapper .footer {
+  display: flex;
+  height: 70px;
+  background-color: #eee;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .footer .footer-user {
+  text-align: center;
+  padding: 1em;
+}
+.wrapper .footer .footer-user > img {
+  width: 26px ;
+  height: 26px ;
+}

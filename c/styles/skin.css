@@ -1,0 +1,15 @@
+#create .navbar-form {
+	width: 100% ;
+}
+.panel-default {
+	background-color: #ddd ;
+}
+.db-item button {
+	float: left ;
+}
+.btn {
+}
+#list {
+	padding: 0 ;
+	margin: 0 ;
+}

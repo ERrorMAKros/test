@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+		
+	<head>
+		<meta charset="utf-8">
+		<title>Autocomplete</title>
+		<script src="autocomplete.js"></script>
+	</head>
+	
+	<body>
+		<div>
+			<input id="keywords" />
+			<p id="text">...</p>
+			<ul id="layout"></ul>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		function onReady() {
+			var auto = new AutoComplete() ;
+			var options = {
+				input: "keywords" ,
+				label: "text" ,
+				output: "layout"
+			} ;
+			auto.initialize( options ) ;
+		} ;
+		//
+		document.addEventListener( "DOMContentLoaded", onReady );
+		//
+	</script>
+	
+</html>

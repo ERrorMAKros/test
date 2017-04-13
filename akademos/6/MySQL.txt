@@ -1,0 +1,36 @@
+/* Display a list of employees, who receive salary greater than the direct supervisor's salary */
+SELECT
+	dp.name AS dep,
+	chiefs.name AS chief, 
+	chiefs.salary AS chief_salary ,
+	worker.name AS employer,
+	worker.salary AS employer_salary
+FROM department dp
+JOIN employee chiefs ON dp.id = chiefs.department_id
+JOIN employee worker ON worker.chief_id = chiefs.id
+WHERE worker.salary > chiefs.salary
+ORDER BY worker.salary ;
+
+/* Display a list of employees, who receive the maximum salary in his department */
+SELECT 
+	dp.name AS department,
+	worker.name AS employer,
+	worker.salary AS max_salary
+FROM employee worker
+INNER JOIN department dp ON worker.department_id = dp.id
+WHERE worker.salary IN (select max(salary) FROM employee GROUP BY department_id );
+
+/* Display a list of employees, who have no subordinates working in the same department */
+SELECT 
+	dep_worker.name as dep,
+	em.name
+FROM employee em
+LEFT JOIN employee chief ON chief.id = em.chief_id AND chief.department_id = em.department_id
+JOIN department dep_worker ON dep_worker.id = em.department_id
+WHERE chief.id IS null ;
+
+/* Display a list of departments sorted by total salary of employees in it, descending */
+SELECT
+	dp.name as dep ,
+	( SELECT SUM( salary ) FROM employee b WHERE b.department_id = dp.id ) AS sum_salary
+FROM department dp ;

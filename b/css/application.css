@@ -1,0 +1,21 @@
+/*
+*	CSS for my application
+*/
+.header, .footer {
+	height: 50px;
+	text-align: left;
+	color: #0088CC;
+}
+
+.page {
+	margin-top: 150px;
+	font-size: 48px;
+	text-align: left;
+	color: #FF6633;
+}
+
+.menu-page .description {
+	color: #FF6633;
+	text-align: left;
+	margin-top: 100px;
+}

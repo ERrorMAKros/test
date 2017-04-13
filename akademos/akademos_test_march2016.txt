@@ -1,0 +1,169 @@
+﻿1. PHP
+
+Instructions:
+Here we have a function that help us spam our hearty laughter. 
+
+function spam($number){
+  //TODO: Not returning the expected value.
+  return "hue" * number;
+}
+
+But it's not working! We need you to fix it:
+
+Expected results:
+spam(1);//hue
+spam(6);//huehuehuehuehuehue
+spam(14);//huehuehuehuehuehuehuehuehuehuehuehuehuehue
+
+Your Solution:
+
+function spam($number){
+  return "hue" * number; //TODO: Rewrite to make the function work
+}
+
+2. PHP & JavaScript
+
+Complete the solution so that the function will break up camel casing, using a space between words.
+
+Example
+
+solution('camelCasing') should return 'camel Casing'
+
+Your Solution:
+
+// complete the function, PHP
+function solution($string) {
+  //...    
+}
+
+// complete the function,JavaScript
+function solution(string) {
+  //...    
+}
+
+3. JavaScript
+
+Description:
+
+It's time to create an autocomplete function! Yay!
+
+The autocomplete function will take in an input string and a dictionary array and return 
+the values from the dictionary that start with the input string. If there are more than 5 matches, 
+restrict your output to the first 5 results. If there are no matches, return an empty array.
+
+Example:
+
+autocomplete('ai', ['airplane','airport','apple','ball']) = ['airplane','airport']
+The dictionary will always be a valid array of strings. Please return all results in the order 
+given in the dictionary, even if they're not always alphabetical. The search should NOT be case 
+sensitive, but the case of the word should be preserved when it's returned.
+
+For example, "Apple" and "airport" would both return for an input of 'a'. However, they should 
+return as "Apple" and "airport" in their original cases.
+
+Important note: Any input that is NOT a letter should be treated as if it is not there. 
+For example, an input of "$%^" should be treated as "" and an input of "ab*&1cd" should be treated as "abcd".
+
+Your Solution:
+
+// complete the function, JavaScript
+function autocomplete(input, dictionary){
+  //...  
+}
+
+4. PHP
+
+Description:
+
+In elementary arithmetic a "carry" is a digit that is transferred from one column of digits 
+to another column of more significant digits during a calculation algorithm.
+
+This is about determining the number of carries performed during the addition of multi-digit numbers.
+
+You will receive an input string containing a set of pairs of numbers formatted as follows:
+
+123 456
+555 555
+123 594
+
+And your output should be a string formatted as follows:
+
+No carry operation
+3 carry operations
+1 carry operations
+Some Assumptions
+
+Assume that numbers can be of any length.
+But both numbers in the pair will be of the same length.
+Although not all the numbers in the set need to be of the same length.
+If a number is shorter, it will be zero-padded.
+The input may contain any arbitrary number of pairs.
+
+Your Solution:
+
+// complete the function, PHP
+function solve($input){
+  return "";
+}
+
+
+5. JavaScript
+
+Description:
+
+Write a functions that will make basic math calculations to produce results like in the following example. Please, do not use "eval":
+
+three(times(five())); // must return 15
+four(plus(eight())); // must return 12
+eight(minus(two())); // must return 6
+six(dividedBy(three())); // must return 2
+
+Your Solution (you can change the template whatever you want):
+
+function zero(x) {}
+function one(x)  {}
+function two(x)  {}
+function three(x)  {}
+function four(x)  {}
+function five(x)  {}
+function six(x)  {}
+function seven(x)  {}
+function eight(x)  {}
+function nine(x)  {}
+
+function plus(x) {}
+function minus(x) {}
+function times(x) {}
+function dividedBy(x) {}
+
+function checkCalculations() {
+	console.log(three(times(five())));
+	console.log(four(plus(eight())));
+	console.log(eight(minus(two())));
+	console.log(six(dividedBy(three())));
+}
+
+
+6. SQL
+
+We have two tables.
+
+Table: department
+Fields:
+id Number (pk)
+name Varchar(100)
+
+Table: employee
+Fields:
+id Number (pk)
+department_id Number
+chief_id Number
+name Varchar(100)
+salary Number
+
+Please write SQL queries for:
+
+- Display a list of employees, who receive salary greater than the direct supervisor's salary
+- Display a list of employees, who receive the maximum salary in his department
+- Display a list of employees, who have no subordinates working in the same department
+- Display a list of departments sorted by total salary of employees in it, descending

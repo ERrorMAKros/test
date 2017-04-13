@@ -1,0 +1,191 @@
+@import "./../node_modules/antd/dist/antd.less";
+@import "./styles.less" ;
+
+@iconfont-css-prefix: anticon;
+@icon-url: "https://at.alicdn.com/t/font_r5u29ls31bgldi";
+
+@color-gray-1: #444 ;
+@color-gray-2: #333 ;
+@color-gray-3: #222 ;
+@color-gray-4: #111 ;
+@normal-color: black ;
+@primary-color: #39B4F0 ;
+@success-color: #06ff00;
+@error-color: #ff2166;
+@highlight-color: #285c84;
+@warning-color: #f6a200;
+
+// ------ Base & Require ------
+@body-background: @normal-color ;
+@component-background: @color-gray-2;
+@font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@code-family: Consolas, Menlo, Courier, monospace;
+@heading-color: fade(rgba(255, 255, 255, 0), 75%);
+@text-color: white ;
+@text-color-secondary: fade(@text-color, 75%);
+@disabled-color: fade(@normal-color, 25%);
+@heading-color-dark: fade(@text-color, 97%);
+@text-color-dark: fade(@normal-color, 91%);
+@text-color-secondary-dark: fade(@normal-color, 67%);
+@disabled-color-dark: fade(@text-color, 35%);
+@font-size-base: 12px;
+@font-size-lg: @font-size-base + 2px;
+@line-height-base: 1.5;
+@border-radius-base: 0px;
+@border-radius-sm: @border-radius-base;
+
+@link-color: @text-color ;
+@link-hover-color: @primary-color ;
+@link-active-color: @highlight-color ;
+@link-hover-decoration: none;
+
+@ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+@ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+@ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+@ease-out-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
+@ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
+@ease-in-out-back: cubic-bezier(0.71, -0.46, 0.29, 1.46);
+@ease-out-circ: cubic-bezier(0.08, 0.82, 0.17, 1);
+@ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+@ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+@ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+@ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+@ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+
+@border-color-base: @color-gray-2 ;
+@border-color-split: @border-color-base ;
+
+@outline-blur-size: 0;
+@outline-width: 2px;
+@outline-color: @primary-color;
+
+@background-color-base: @color-gray-4 ;
+
+@shadow-color: rgba(0, 0, 0, .2);
+@box-shadow-base: @shadow-1-down;
+@shadow-1-up: 0 -1px 6px @shadow-color;
+@shadow-1-down: 0 1px 6px @shadow-color;
+@shadow-1-left: -1px 0 6px @shadow-color;
+@shadow-1-right: 1px 0 6px @shadow-color;
+@shadow-2: 0 2px 8px @shadow-color;
+
+@btn-font-weight: 500;
+@btn-border-radius-base: 0px ;
+@btn-border-radius-sm: @btn-border-radius-base ;
+
+@btn-primary-color: @text-color;
+@btn-primary-bg: @primary-color ;
+@btn-group-border: @component-background ;
+
+@btn-default-color: @text-color ;
+@btn-default-bg: @background-color-base;
+@btn-default-border: @border-color-base;
+
+@btn-ghost-color: @btn-primary-color;
+@btn-ghost-bg: transparent;
+@btn-ghost-border: @border-color-base;
+
+@btn-disable-color: @disabled-color;
+@btn-disable-bg: @background-color-base;
+@btn-disable-border: @border-color-base;
+
+@btn-padding-base: 4px 15px;
+@btn-font-size-lg: @font-size-lg;
+@btn-padding-lg: 4px 15px 5px 15px;
+@btn-padding-sm: 1px 7px;
+
+@btn-circle-size: 28px;
+@btn-circle-size-lg: 32px;
+@btn-circle-size-sm: 22px;
+
+@screen-xs: 480px;
+@screen-xs-min: @screen-xs;
+@screen-xs-max: (@screen-xs-min - 1);
+
+@screen-sm: 768px;
+@screen-sm-min: @screen-sm;
+@screen-sm-max: (@screen-sm-min - 1);
+
+@screen-md: 992px;
+@screen-md-min: @screen-md;
+@screen-md-max: (@screen-md-min - 1);
+
+@screen-lg: 1200px;
+@screen-lg-min: @screen-lg;
+@screen-lg-max: (@screen-lg-min - 1);
+
+@grid-columns: 24;
+@grid-gutter-width: 0;
+
+@layout-body-background: @color-gray-3;
+@layout-header-background: @heading-color;
+@layout-header-height: 64px;
+@layout-header-padding: 0 50px;
+@layout-footer-padding: 24px 50px;
+@layout-sider-background: @heading-color;
+@layout-content-margin: 24px;
+@layout-trigger-height: 48px;
+
+@zindex-affix: 10;
+@zindex-back-top: 10;
+@zindex-modal-mask: 1000;
+@zindex-modal: 1000;
+@zindex-notification: 1010;
+@zindex-message: 1010;
+@zindex-popover: 1030;
+@zindex-picker: 1050;
+@zindex-dropdown: 1050;
+@zindex-tooltip: 1060;
+
+@animation-duration-slow: .3s; // Modal
+@animation-duration-base: .2s;
+@animation-duration-fast: .1s; // Tooltip
+
+@label-required-color: @highlight-color;
+@label-color: @text-color;
+@form-item-margin-bottom: 24px;
+
+@input-height-base: 28px;
+@input-height-lg: 32px;
+@input-height-sm: 22px;
+@input-padding-horizontal: 7px;
+@input-padding-vertical-base: 4px;
+@input-padding-vertical-sm: 1px;
+@input-padding-vertical-lg: 6px;
+@input-placeholder-color: @primary-color ;
+@input-color: @component-background  ;
+@input-border-color: @border-color-base;
+@input-bg: @text-color ;
+@input-hover-border-color: @primary-color;
+@input-disabled-bg: @background-color-base;
+
+@tooltip-max-width: 250px;
+@tooltip-color: @text-color ;
+@tooltip-bg: @component-background ;
+@tooltip-arrow-width: 5px;
+@tooltip-distance: @tooltip-arrow-width - 1 + 4;
+@tooltip-arrow-color: @tooltip-bg;
+
+@popover-bg: @component-background ;
+@popover-min-width: 177px;
+@popover-arrow-width: 4px;
+@popover-arrow-color: @text-color ;
+@popover-arrow-outer-width: (@popover-arrow-width + 1);
+@popover-arrow-outer-color: fadeout(@border-color-base, 30%);
+
+@process-default-color: @primary-color;
+
+@menu-dark-bg: @color-gray-4 ;
+@menu-dark-submenu-bg: @color-gray-3 ;
+
+@spin-dot-size-sm: 14px;
+@spin-dot-size: 20px;
+@spin-dot-size-lg: 32px;
+
+@time-picker-panel-column-width: 56px;
+@time-picker-panel-width: @time-picker-panel-column-width * 3;
+
+@carousel-dot-width: 16px;
+@carousel-dot-height: 3px;
+@carousel-dot-active-width: 24px;
+@border-radius-sm: 0px;
