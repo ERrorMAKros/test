@@ -56,9 +56,7 @@ export default class Application extends Component {
 		this._actions.setCheckboxValue( ! checkboxChecked ) ;
 	};
 	onPopupOpen = () => {
-		
 		const { checkboxChecked , selected , dataset } = this.props.app ;
-		
 		if( checkboxChecked == true) {
 			if( ! this.state.isSequenced ) {
 				this._actions.setSelectedValue( 0 ) ;
@@ -70,7 +68,6 @@ export default class Application extends Component {
 					else return this.setState( { isSequenced: false } );
 				}
 		}
-		
 		this._actions.setPopupVisibility( true ) ;
 	};
 	onPopupClose = () => {

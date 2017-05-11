@@ -1,0 +1,37 @@
+{
+  "entry": {
+    "index": "./index.jsx"
+  },
+  "dependencies": {
+    "antd": "^2.4.2",
+    "atool-build": "0.10.x-alpha.0",
+    "babel-plugin-antd": "~0.5.1",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-runtime": "^6.18.0",
+    "es3ify-loader": "^0.2.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.0",
+    "dora": "0.4.x",
+    "dora-plugin-browser-history": "^0.2.0",
+    "dora-plugin-hmr": "0.7.x",
+    "dora-plugin-livereload": "0.5.x",
+    "dora-plugin-proxy": "0.8.x",
+    "dora-plugin-webpack": "0.8.x",
+    "eslint": "3.x",
+    "eslint-config-airbnb": "13.x",
+    "eslint-plugin-react": "6.x",
+    "glob": "^7.1.1",
+    "pre-commit": "1.x"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "scripts": {
+    "start": "dora -p 8001 --plugins \"webpack,hmr,proxy,livereload?enableJs=false&injectHost=127.0.0.1,browser-history?index=/src/entries/index.html\"",
+    "lint": "eslint --ext .js,.jsx src",
+    "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name}/${npm_package_version}"
+  }
+}
