@@ -1,16 +1,8 @@
-import { LOCALSTORE_ID } from "../../controller/constants/Environment";
-import _ from "lodash";
+import { LS_CATALOG_ID } from "../../controller/constants/Environment";
+import LocalStorageAdaptor from "../../controller/helpers/LocalStorageAdaptor";
 
 export const CATALOG_INIT = 'Catalog.INIT';
-export const CATALOG_FETCH = 'Catalog.FETCH';
-
 export function initCatalog() {
-	const json = localStorage.getItem( LOCALSTORE_ID ) ;
-	const data = ! _.isNull(json) && Boolean(json.length) ? JSON.parse( json ) : [] ;
+	const data = LocalStorageAdaptor.get( LS_CATALOG_ID ) ;
 	return (dispatch) => dispatch({ type: CATALOG_INIT, data }) ;
-}
-export function fetchCatalog( data) {
-	localStorage.setItem( LOCALSTORE_ID, JSON.stringify(data) );
-	initCatalog() ;
-	return (dispatch) => dispatch({ type: CATALOG_FETCH }) ;
 }

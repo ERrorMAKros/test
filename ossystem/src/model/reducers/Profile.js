@@ -1,10 +1,13 @@
-import {PROFILE_SET} from "../actions/Profile";
+import { PROFILE_INIT } from "../actions/Profile";
 
-export default function Profile( state = {}, action ) {
+const defaults = {}
+
+export default function Profile( state = defaults, action ) {
 	switch( action.type ) {
-		case PROFILE_SET: {
-			/* debug */ console.warn( `[R] Profile([${PROFILE_SET}])` , { state, action } ) ;
-			return action.data ;
+		case PROFILE_INIT: {
+			/* debug */ console.warn( `[R] Profile([${PROFILE_INIT}])` , { state, action } ) ;
+			const data = action.data ;
+			return data ;
 		}
 		default: return state ;
 	}

@@ -1,31 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Router, browserHistory, Route, IndexRoute } from "react-router";
 import { Provider } from "react-redux";
 import { LocaleProvider } from "antd";
 import { APPLICATION_ID } from "./src/controller/constants/Environment";
 import store from "./src/model/Model";
 import enUS from "antd/lib/locale-provider/en_US";
+import RoleBasedComponentDecoration from "./src/controller/decorators/RoleBasedComponentDecoration";
+import { ROLE_ADMIN } from "./src/controller/authentication/Roles";
+import Bootstrap from "./src/view/structure/bootstrap/Bootstrap";
+import Catalog from "./src/view/structure/bootstrap/application/catalog/Catalog";
+import Add from "./src/view/structure/bootstrap/application/add/Add";
+import NotFound from "./src/view/structure/error/NotFound";
+import Home from "./src/view/structure/bootstrap/application/home/Home";
 import "./styles/styles.less";
-import "./styles/view/Body.less";
-import { Router, Route, IndexRoute } from "react-router";
-import createBrowserHistory from "history/lib/createBrowserHistory";
-import Application from "./src/view/application/Application";
-import Catalog from "./src/view/catalog/Catalog";
-import Add from "./src/view/add/Add";
-import NotFound from "./src/view/error/NotFound";
-import Layout from "./src/view/layout/Layout";
+
+const routes = (
+	<div>
+		<Route path="/" component={Bootstrap}>
+			<IndexRoute component={Home}/>
+			<Route path="catalog" component={Catalog} />
+			<Route path="add" component={RoleBasedComponentDecoration(Add, [ ROLE_ADMIN ])} />
+		</Route>
+		<Route path='*' component={NotFound} />
+	</div>
+) ;
 
 const template = (
 	<Provider store={store}>
 		<LocaleProvider locale={enUS}>
-			<Router history={createBrowserHistory()}>
-				<Route path='/' component={Application}>
-					<IndexRoute component={Layout}/>
-					<Route path='catalog' component={Catalog}/>
-					<Route path='add' component={Add}/>
-				</Route>
-				<Route path='*' component={NotFound}/>
-			</Router>
+			<Router history={browserHistory} routes={ routes }/>
 		</LocaleProvider>
 	</Provider>
 );

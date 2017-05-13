@@ -2,7 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const Authentication = require( "./authentication.json" ) ;
+const user = require( "./user.json" ) ;
 
 module.exports = {
     entry: {
@@ -51,7 +51,7 @@ module.exports = {
     },
     plugins: [
 	    new webpack.DefinePlugin({
-		    __WEBPACK_AUTHENTICATION: JSON.stringify( Authentication )
+		    __WEBPACK_AUTHENTICATION: JSON.stringify( user )
 	    } ),
         new webpack.optimize.DedupePlugin() ,
         new webpack.optimize.UglifyJsPlugin({

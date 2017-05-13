@@ -1,7 +1,7 @@
-export const PROFILE_SET = 'Profile.SET';
+export const PROFILE_INIT = 'Profile.INIT';
 
-export function setProfile( data ) {
+export function initProfile( data ) {
 	return (dispatch) => {
-		dispatch({ type: PROFILE_SET, data }) ;
+		dispatch({ type: PROFILE_INIT, data }) ;
 	}
 }

@@ -1,2 +1,2 @@
 export const APPLICATION_ID = "application" ;
-export const LOCALSTORE_ID = "database" ;
+export const LS_CATALOG_ID = "catalog" ;
