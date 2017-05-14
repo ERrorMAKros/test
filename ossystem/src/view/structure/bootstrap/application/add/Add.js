@@ -2,14 +2,14 @@ import React, { Component, PropTypes } from "react";
 import { bindActionCreators } from "redux";
 import { Icon, Modal, Button } from 'antd';
 import { connect } from "react-redux";
-import { addICatalogItems } from "../../../../../model/actions/Catalog";
+import { addICatalogItems, fetchCatalog } from "../../../../../model/actions/Catalog";
 import Form from "./form/Form" ;
 import Item from "../catalog/item/Item" ;
 import _ from "lodash" ;
 
 @connect(
 	null ,
-	( dispatch ) => ( bindActionCreators( { addICatalogItems }, dispatch ) )
+	( dispatch ) => ( bindActionCreators( { addICatalogItems, fetchCatalog }, dispatch ) )
 )
 export default class Add extends Component {
 	state = {
@@ -41,15 +41,21 @@ export default class Add extends Component {
 		/* debug */ console.log( "Add() onSubmitHandler([ data ])" , data ) ;
 		const { items } = this.state ;
 		items.unshift( data ) ;
+
 		this.setState({ items }) ;
 	}
-	
+	saveToStore = () => {
+		const { items } = this.state ;
+		
+		/* debug */ console.warn('Add() saveToStore([ items ])' , { items } );
+		
+		this.props.addICatalogItems(items) ;
+		this.props.fetchCatalog() ;
+	}
 	componentWillUnmount() {
-		/* debug */ console.warn('Add() componentWillUnmount([ items ])' , this.state.items );
 		const visible = false ;
 		this.setState({ visible });
 		
-		const { items } = this.state ;
-		this.props.addICatalogItems(items) ;
+		this.saveToStore() ;
 	}
 }
