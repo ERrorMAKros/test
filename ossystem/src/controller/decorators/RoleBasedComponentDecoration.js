@@ -1,25 +1,31 @@
 import React, { Component, PropTypes } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
-import Restricted from "../../view/structure/error/Restricted";
 
-const RoleBasedComponentDecoration = ( ComponentClass, allowed = [] ) => {
-
+const RoleBasedComponentDecoration = ( ComponentClass, componentParams={}, ExcludedClass, excludedParams={}, authenticated = [] ) => {
+	
+	class Empty extends Component {
+		render = () => <span/>
+	}
 	class Proxy extends Component {
 		render() {
 			const { role } = this.props.Profile ;
-			const isAllowed = Boolean( _.indexOf( allowed, role ) + 1 ) ;
-			return isAllowed ? <ComponentClass {...this.props} /> : <Restricted/> ;
+			const isAllowed = Boolean( _.indexOf( authenticated, role ) + 1 ) ;
+			const Excluded = ExcludedClass || Empty ;
+			return isAllowed
+				? <ComponentClass { ...this.props } { ...componentParams } />
+				: <Excluded { ...this.props } { ...excludedParams }/> ;
 		}
 	}
-	const mapStateToProps = (store) => {
+
+	const props = (store) => {
 		return {
 			Profile: store.Profile
 		} ;
 	}
-	return connect(mapStateToProps)(Proxy)
+	const decoration = connect(props) ;
+
+	return decoration(Proxy) ;
 }
-
-
 
 export default RoleBasedComponentDecoration ;

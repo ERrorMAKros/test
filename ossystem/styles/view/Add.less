@@ -4,6 +4,7 @@
 @size: 14em ;
 
 .add {
+  padding: @offset;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -16,22 +17,23 @@
 }
 
 .add .new-item {
-  width: @size ;
-  height: @size ;
-  margin: @offset ;
-  padding: @offset ;
-  background-color: @highlight-color ;
-  color: @text-color ;
+  width: @size ! important ;
+  height: @size ! important ;
+}
+.add .new-item .ant-btn {
   border: none ;
+  background-color: @highlight-color ;
+  width: 100% ;
+  height: 100% ;
 }
-.add .new-item .anticon {
-  font-size: 300% ;
-}
-.add .new-item:hover,
-.add .new-item:active,
-.add .new-item:focus {
+.add .new-item .ant-btn:hover,
+.add .new-item .ant-btn:active,
+.add .new-item .ant-btn:focus {
   background-color: @primary-color ;
   border: 1px solid @text-color ;
 }
 
-.form-modal {}
+.add .new-item .ant-btn .anticon {
+  color: @text-color ;
+  font-size: 300% ;
+}

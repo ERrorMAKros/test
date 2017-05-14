@@ -4,12 +4,16 @@
 @size: 14em ;
 
 .item {
+  display: block;
   width: @size ;
   height: @size ;
-  margin: @offset ;
   padding: @offset ;
-  background-color: @color-gray-2 ;
+  margin: 0 ;
   overflow: hidden ;
+}
+
+.item .wrapper {
+  background-color: @color-gray-2 ;
 }
 
 .item .name,
@@ -31,4 +35,24 @@
   font-style: italic ;
   font-size: 70% ;
   color: @text-color ;
+}
+
+.item-authenticated {
+  overflow: hidden ;
+  position: relative;
+  width: @size ;
+  height: @size ;
+}
+
+.item-authenticated .btn-remove {
+  position: absolute ;
+  top: 10em;
+  left: 3.5em;
+  background-color: @error-color ! important ;
+  border: none ! important ;
+  color: @text-color ;
+  margin: 0 ! important ;
+}
+.item-authenticated .btn-remove .anticon {
+  font-size: 100% ;
 }

@@ -1,4 +1,5 @@
 @import "../variables.less" ;
+@offset: .5em ;
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px @disabled-color ;
@@ -34,4 +35,11 @@ body ,
 .ant-menu-item-active,
 .ant-menu-item-selected {
   border: none ! important ;
+}
+
+.wrapper {
+  background-color: transparent ;
+  padding: @offset ;
+  width: 100% ;
+  height: 100% ;
 }

@@ -17,15 +17,17 @@ export default class Add extends Component {
 		visible: false
 	}
 	render() {
-		const items = _.map( this.state.items, (value) => <Item { ...value }/> ) ;
+		const items = _.map( this.state.items, (data) => <Item data={data}/> ) ;
 		return (
 			<div className="add">
 				<Modal className="form-modal" title="Добавление товара" onCancel={this.onModalTrigger} footer={null} visible={this.state.visible}>
 					<Form onSubmit={this.onSubmitHandler}/>
 				</Modal>
-				<Button className="new-item" onClick={this.onModalTrigger}>
-					<Icon type="plus-square" />
-				</Button>
+				<span className="wrapper new-item">
+					<Button onClick={this.onModalTrigger}>
+						<Icon type="plus-square" />
+					</Button>
+				</span>
 				{items}
 			</div>
 		)

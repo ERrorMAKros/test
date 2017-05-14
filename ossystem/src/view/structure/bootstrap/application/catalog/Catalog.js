@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from "react";
-import Item from "./item/Item" ;
+import { ROLE_ADMIN } from "../../../../../controller/authentication/Roles" ;
 import { connect } from "react-redux";
+import AuthenticatedItem from "./item/AuthenticatedItem" ;
 
 @connect(
 	( store ) => {
@@ -15,7 +16,10 @@ export default class Catalog extends Component {
 		/* debug */ console.info( "Catalog()" , this ) ;
 	}
 	render() {
-		const items = _.map( this.props.items, (value) => <Item { ...value }/> ) ;
+		const items = _.map( this.props.items, (data) => <AuthenticatedItem data={ data } authenticated={[ ROLE_ADMIN ]} onDelete={this.onDeleteHandler}/> ) ;
 		return <div className="catalog">{items}</div> ;
+	}
+	onDeleteHandler = ( data ) => {
+		/* debug */ console.log( "Catalog()", "onDeleteHandler([ data ])", data ) ;
 	}
 }

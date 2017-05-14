@@ -12,6 +12,7 @@ import Bootstrap from "./src/view/structure/bootstrap/Bootstrap";
 import Catalog from "./src/view/structure/bootstrap/application/catalog/Catalog";
 import Add from "./src/view/structure/bootstrap/application/add/Add";
 import NotFound from "./src/view/structure/error/NotFound";
+import Restricted from "./src/view/structure/error/Restricted";
 import Home from "./src/view/structure/bootstrap/application/home/Home";
 import "./styles/styles.less";
 
@@ -20,7 +21,7 @@ const routes = (
 		<Route path="/" component={Bootstrap}>
 			<IndexRoute component={Home}/>
 			<Route path="catalog" component={Catalog} />
-			<Route path="add" component={RoleBasedComponentDecoration(Add, [ ROLE_ADMIN ])} />
+			<Route path="add" component={RoleBasedComponentDecoration(Add, null, Restricted, null, [ ROLE_ADMIN ])} />
 		</Route>
 		<Route path='*' component={NotFound} />
 	</div>

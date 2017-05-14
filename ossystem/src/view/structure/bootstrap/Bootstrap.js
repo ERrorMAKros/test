@@ -21,7 +21,7 @@ export default class Bootstrap extends Component {
 		user: {
 			id: 1,
 			name: "саша",
-			role: ROLE_ADMIN // or ROLE_USER
+			role: ROLE_ADMIN // [ ROLE_ADMIN or ROLE_USER
 		}
 	}
 	static propTypes = {
