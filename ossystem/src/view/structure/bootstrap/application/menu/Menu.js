@@ -19,14 +19,11 @@ export default class AppMenu extends Component {
 					{name}
 					<span className="role">{role}</span>
 				</Menu.Item>
-				<Menu.Item key="a">
-					<Link to='/a'>a</Link>
-				</Menu.Item>
 				<Menu.Item key="catalog">
-					<Link to='/catalog'>catalog</Link>
+					<Link to='/catalog'>каталог</Link>
 				</Menu.Item>
 				<Menu.Item key="add">
-					<Link to='/add'>add</Link>
+					<Link to='/add'>добавить</Link>
 				</Menu.Item>
 			</Menu>
 		);

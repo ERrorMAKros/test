@@ -1,10 +1,24 @@
-import { CATALOG_INIT } from "../actions/Catalog";
+import { CATALOG_INIT, CATALOG_ADD } from "../actions/Catalog";
+import _ from "lodash" ;
 
-export default function Catalog( state = {}, action ) {
+const defaults = {
+	items: []
+} ;
+export default function Catalog( state = defaults, action ) {
 	switch( action.type ) {
 		case CATALOG_INIT: {
 			/* debug */ console.warn( `[R] Catalog([${CATALOG_INIT}])` , { state, action } ) ;
-			return action.data ;
+			const items =  action.data || [] ;
+
+			return { items };
+		}
+		case CATALOG_ADD: {
+			/* debug */ console.warn( `[R] Catalog([${CATALOG_ADD}])` , { state, action } ) ;
+			const data = action.data || [] ;
+			const items = state.items ;
+			const splitter = _.concat( [], data, items ) ;
+
+			return { items: splitter };
 		}
 		default: return state ;
 	}

@@ -1,0 +1,34 @@
+@import "../variables.less" ;
+
+@offset: .5em ;
+@size: 14em ;
+
+.item {
+  width: @size ;
+  height: @size ;
+  margin: @offset ;
+  padding: @offset ;
+  background-color: @color-gray-2 ;
+  overflow: hidden ;
+}
+
+.item .name,
+.item .price {
+  display: inline-block ;
+  overflow: hidden ;
+  color: @text-color ;
+}
+
+.item .name {
+  width: 70% ;
+}
+.item .price {
+  width: 30% ;
+  background-color: @primary-color ;
+  text-align: center ;
+}
+.item .description {
+  font-style: italic ;
+  font-size: 70% ;
+  color: @text-color ;
+}

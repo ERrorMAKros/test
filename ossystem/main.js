@@ -4,7 +4,7 @@ import { Router, browserHistory, Route, IndexRoute } from "react-router";
 import { Provider } from "react-redux";
 import { LocaleProvider } from "antd";
 import { APPLICATION_ID } from "./src/controller/constants/Environment";
-import store from "./src/model/Model";
+import store from "./src/model/Store";
 import enUS from "antd/lib/locale-provider/en_US";
 import RoleBasedComponentDecoration from "./src/controller/decorators/RoleBasedComponentDecoration";
 import { ROLE_ADMIN } from "./src/controller/authentication/Roles";

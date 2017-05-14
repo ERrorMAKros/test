@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { initProfile } from "../../../model/actions/Profile";
 import { initCatalog } from "../../../model/actions/Catalog";
 import { bindActionCreators } from "redux";
+import { ROLE_USER, ROLE_ADMIN } from "../../../controller/authentication/Roles" ;
 import Preloader from "../bootstrap/preloader/Preloader";
 import Application from "../bootstrap/application/Application";
 import _ from "lodash";
@@ -17,7 +18,11 @@ import _ from "lodash";
 )
 export default class Bootstrap extends Component {
 	static defaultProps = {
-		user: __WEBPACK_AUTHENTICATION
+		user: {
+			id: 1,
+			name: "саша",
+			role: ROLE_ADMIN // or ROLE_USER
+		}
 	}
 	static propTypes = {
 		user: PropTypes.shape({
