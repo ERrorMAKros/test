@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from "react";
 import { Link } from "react-router";
 import { Menu } from "antd";
 import { connect } from "react-redux";
+import Logo from "../../../../../../assets/logo.png" ;
 
 @connect(
 	( store ) => {
@@ -16,6 +17,7 @@ export default class AppMenu extends Component {
 		return (
 			<Menu mode="horizontal">
 				<Menu.Item className="app-user" disabled={true} key="user">
+					<img src={Logo}/>
 					{name}
 					<span className="role">{role}</span>
 				</Menu.Item>

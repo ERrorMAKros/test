@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from "react";
 import { ROLE_ADMIN } from "../../../../../controller/authentication/Roles" ;
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { getRandomId } from "../../../../../controller/helpers/Common" ;
+import { removeCatalogItem } from "../../../../../model/actions/Catalog";
 import AuthenticatedItem from "./item/AuthenticatedItem" ;
 
 @connect(
@@ -8,18 +11,16 @@ import AuthenticatedItem from "./item/AuthenticatedItem" ;
 		return {
 			items: store.Catalog.items
 		}
-	}
+	},
+	( dispatch ) => ( bindActionCreators( { removeCatalogItem }, dispatch ) )
 )
 export default class Catalog extends Component {
-	constructor() {
-		super( ...arguments ) ;
-		/* debug */ console.info( "Catalog()" , this ) ;
-	}
 	render() {
-		const items = _.map( this.props.items, (data) => <AuthenticatedItem data={ data } authenticated={[ ROLE_ADMIN ]} onDelete={this.onDeleteHandler}/> ) ;
+		const items = _.map( this.props.items, (data) => <AuthenticatedItem key={getRandomId()} data={ data } authenticated={[ ROLE_ADMIN ]} onDelete={this.onDeleteHandler}/> ) ;
 		return <div className="catalog">{items}</div> ;
 	}
 	onDeleteHandler = ( data ) => {
-		/* debug */ console.log( "Catalog()", "onDeleteHandler([ data ])", data ) ;
+		const id = data.id;
+		this.props.removeCatalogItem( id );
 	}
 }

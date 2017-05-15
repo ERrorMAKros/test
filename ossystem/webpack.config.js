@@ -2,7 +2,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const user = require( "./user.json" ) ;
 
 module.exports = {
     entry: {
@@ -42,6 +41,7 @@ module.exports = {
                 test: /\.less$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css!less")
             },
+	        {test: /\.(png|jpg|)$/, loader: 'url-loader?limit=200000' } ,
             {test: /\.html$/, loader: 'html' },
             {test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
             {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
@@ -50,14 +50,10 @@ module.exports = {
         ]
     },
     plugins: [
-	    new webpack.DefinePlugin({
-		    __WEBPACK_AUTHENTICATION: JSON.stringify( user )
-	    } ),
+	    //  new webpack.DefinePlugin({}),
         new webpack.optimize.DedupePlugin() ,
         new webpack.optimize.UglifyJsPlugin({
-	        compress: {
-		        warnings: false
-	        } ,
+	        compress: { warnings: false } ,
 	        comments: false ,
         	mangle: false ,
 	        sourcemap: false

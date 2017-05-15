@@ -33,7 +33,6 @@ export default class AuthenticatedItem extends Component {
 		return RoleBasedComponentDecoration( RemoveButton, attributes, null, null, this.props.authenticated ) ;
 	}
 	onRemoveHandler = ( event ) => {
-		/* debug */ console.log( "AuthenticatedItem()", "onRemoveHandler()", this ) ;
 		const { onDelete, data } = this.props ;
 		if( onDelete ) onDelete( data ) ;
 	}

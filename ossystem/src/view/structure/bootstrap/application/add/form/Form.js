@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from "react";
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import { getRandomId } from '../../../../../../controller/helpers/Common';
-import _ from "lodash" ;
+import { Form, Input, Button } from "antd";
+import { getRandomId } from "../../../../../../controller/helpers/Common";
+import _ from "lodash";
 
 const ClassDecorator = Form.create() ;
 

@@ -4,9 +4,7 @@ import { initProfile } from "../../../model/actions/Profile";
 import { initCatalog } from "../../../model/actions/Catalog";
 import { bindActionCreators } from "redux";
 import { ROLE_USER, ROLE_ADMIN } from "../../../controller/authentication/Roles" ;
-import Preloader from "../bootstrap/preloader/Preloader";
 import Application from "../bootstrap/application/Application";
-import _ from "lodash";
 
 @connect(
 	( store ) => {
@@ -20,7 +18,7 @@ export default class Bootstrap extends Component {
 	static defaultProps = {
 		user: {
 			id: 1,
-			name: "Александр",
+			name: "OSSYSTEM",
 			role: ROLE_ADMIN // ROLE_ADMIN or ROLE_USER
 		}
 	}
@@ -36,13 +34,6 @@ export default class Bootstrap extends Component {
 		this.props.initCatalog();
 	}
 	render() {
-		return this.getActiveElement() ;
-	}
-	
-	getActiveElement() {
-		const { Profile } = this.props ;
-		return _.isEmpty( Profile )
-			? <Preloader/>
-			: <Application>{ this.props.children }</Application>
+		return <Application>{ this.props.children }</Application> ;
 	}
 }
