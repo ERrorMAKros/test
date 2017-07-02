@@ -1,0 +1,28 @@
+@import './variables.scss';
+
+html,
+body {
+  background-color: $black ;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0.8em;
+  font-family: $font-default;
+  font-size: $font-size ;
+}
+
+@media only screen and (min-width: 48em) {
+  body {
+    padding: 0 3em;
+  }
+}
+
+:global(#root) {
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
