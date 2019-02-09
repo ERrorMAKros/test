@@ -26,7 +26,7 @@ export default class extends PureComponent {
       const { id, homepage, description } = item ;
       return (
         <ListItem button key={ index }>
-          <ListItemText primary={ `${ id }. ${ homepage }` } secondary={ description }/>
+          <ListItemText primary={ `${ id }. ${ description }` } secondary={ homepage }/>
           <ListItemSecondaryAction>
             <IconButton onClick={ ()=> onEdit && onEdit( item ) } color="primary">
               <EditIcon />

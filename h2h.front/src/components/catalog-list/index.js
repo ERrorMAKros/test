@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import { Debug } from "../../utils/Common";
 import PropTypes from "prop-types";
-import Preloader from "../preloader";
 import Modal from "@material-ui/core/Modal";
 import Header from "./header";
 import List from "./list";
@@ -31,15 +30,13 @@ export default class CatalogList extends PureComponent {
     const opened = [ EventTypes.Create, EventTypes.Edit ].includes( action ) ;
 
     return (
-      <div className={ Style.CatalogList }>
-        <Preloader active={ fetching }>
-          <Modal open={ opened }>
-            <Form data={ item } onClose={ this.onCloseModal } onSubmit={ this.onForm } />
-          </Modal>
-          <Header enabled={ fetching } onClick={ this.onClick( EventTypes.Create ) }/>
-          <List data={ data } onEdit={ this.onClick( EventTypes.Edit ) } onRemove={ this.onClick( EventTypes.Remove ) }/>
-          <Footer data={ data }/>
-        </Preloader>
+      <div className={ Style.CatalogList } disabled={ fetching }>
+        <Modal open={ opened }>
+          <Form data={ item } onClose={ this.onCloseModal } onSubmit={ this.onForm } />
+        </Modal>
+        <Header enabled={ fetching } onClick={ this.onClick( EventTypes.Create ) }/>
+        <List data={ data } onEdit={ this.onClick( EventTypes.Edit ) } onRemove={ this.onClick( EventTypes.Remove ) }/>
+        <Footer data={ data }/>
       </div>
     )
   }
