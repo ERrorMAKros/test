@@ -1,0 +1,24 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.RootCatalog {
+  @include flex( column ) ;
+  overflow-y: auto ;
+  padding: 1em ;
+  width: 100% ;
+  height: 100% ;
+  .Preloader {
+    @include flex( column ) ;
+    justify-content: center  ;
+    align-items: center;
+    .Spinner {
+      @include flex( column ) ;
+    }
+  }
+  .Context {
+    @include flex( column ) ;
+    background-color: $color-white ;
+    width: 100% ;
+    height: 100% ;
+  }
+}
