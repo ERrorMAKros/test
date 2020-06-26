@@ -1,0 +1,15 @@
+@import '../styles/mixins' ;
+
+$font-family-name-regular: 'OpenSansCondensedR' ;
+$font-family-name-bold: 'OpenSansCondensedB' ;
+
+@font-face {
+  @include defaults-font-face( $font-family-name-bold, '/fonts/opensanscond_bold.ttf' ) ;
+}
+@font-face {
+  @include defaults-font-face( $font-family-name-regular, '/fonts/opensanscond_regular.ttf' ) ;
+  font-weight: 500;
+}
+
+[class^=#{ $font-family-name-bold } ] { @include defaults-font( $font-family-name-bold ) }
+[class^=#{ $font-family-name-regular } ] { @include defaults-font( $font-family-name-regular ) }

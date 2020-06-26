@@ -1,0 +1,23 @@
+$font-name: "shogun" !default;
+$font-path: "fonts" !default;
+
+@font-face {
+  font-family: $font-name ;
+  src: url('/fonts/#{ $font-name }.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="shogun-icon"],
+[class*="shogun-icon"] {
+  font-family: '#{ $font-name }' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

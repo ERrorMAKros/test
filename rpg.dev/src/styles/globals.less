@@ -1,0 +1,184 @@
+// @import "../styles/"
+
+@color-blue: #1890ff ;
+@color-primary: @color-blue ;
+
+.infinite-scroll-component {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+.spinner-preloader {
+  width: 100%;
+  height: 100%;
+  max-height: none ! important;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.spinner-preloader > .ant-spin-container {
+  width: 100%;
+  height: 100%;
+}
+
+.ant-modal .ant-modal-content .ant-modal-close ,
+.ant-modal-footer ,
+.ant-modal-header {
+  display: none;
+}
+.ant-modal-body {
+  padding: 0 ! important;
+}
+.ant-modal-mask {
+  background-color: rgba(0, 0, 0, .8) ! important;
+}
+.ant-modal-wrap {
+  display: flex ;
+  justify-content: center ;
+  align-items: center ;
+
+  > .ant-modal {
+    margin: unset ;
+    padding: unset ;
+    top: 0 ;
+  }
+}
+
+.ant-menu {
+  display: flex ! important ;
+  flex-direction: row ;
+  overflow: hidden ;
+  height: 100%;
+}
+.ant-menu-item {
+  display: flex !important ;
+  border: none !important ;
+  justify-content: center ;
+  align-items: center ;
+  text-align: center ;
+  top: 0 !important;
+  font-family: "Compact" !important;
+
+  &:hover {
+    border: none ! important ;
+    background-color: @color-primary ! important ;
+    color: white ! important ;
+  }
+}
+.ant-menu-item .anticon {
+  margin: 0 ;
+}
+.ant-menu-item.ant-menu-item-selected ,
+.ant-menu-item-selected ,
+.ant-menu-item-active {
+  border: none ! important ;
+  background-color: @color-primary ! important ;
+  color: white ! important ;
+}
+
+.ant-layout {
+  width: 100%;
+  height: 100% ;
+}
+.ant-layout-header {
+  background-color: @color-primary ;
+  height: 2.8em;
+  padding: 0;
+}
+.ant-layout-content {
+  overflow-x: hidden ;
+  overflow-y: auto ;
+  height: 100% ;
+  width: 100% ;
+}
+.ant-layout-footer {
+  background-color: transparent ;
+  padding: 0;
+  height: 2.8em;
+}
+.ant-layout-sider {
+  padding: 0 ! important ;
+  overflow: hidden;
+  min-width: unset !important ;
+  max-width: unset !important ;
+  flex: unset !important ;
+  width: unset !important ;
+}
+
+.ant-menu-horizontal {
+  border-bottom: 0;
+}
+.ant-menu-sub {
+  display: block !important;
+  margin-top: -.6em;
+}
+
+.ant-tabs-bar {
+  margin: 0 ! important ;
+}
+.ant-tabs-tab {
+  border: none ! important ;
+  font-family: "Compact" !important;
+}
+
+.ant-spin .ant-spin-text {
+  padding: 1em ;
+}
+.ant-spin-nested-loading {
+  width: 100% ;
+  height: 100% ;
+
+  .ant-spin-container {
+    width: 100% ;
+    height: 100% ;
+  }
+}
+
+.ant-tooltip-content > .ant-tooltip-inner {
+  font-size: 75% ;
+}
+
+.ant-collapse-item {
+  border: none !important;
+
+  .ant-collapse-header {
+    color: @color-primary ! important ;
+    padding: 0 ! important ;
+  }
+  .ant-collapse-content-box {
+    padding: unset ! important ;
+  }
+}
+.ant-popover-inner > div {
+  .ant-popover-title {
+    display: none ;
+  }
+  .ant-popover-inner-content {
+    /* clean */ padding: 0 ! important ;
+  }
+}
+
+.ant-switch {
+  .ant-switch-inner {
+    justify-content: flex-start ;
+    align-items: center ;
+    display: flex ;
+
+     > i > svg {
+       width: .75em;
+       height: .75em;
+     }
+  }
+}
+
+
+
+@media screen and (max-width: 1000px) {}

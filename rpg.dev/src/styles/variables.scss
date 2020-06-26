@@ -1,0 +1,79 @@
+@import '../fonts/compact';
+@import '../fonts/shogun';
+
+// Font family constants
+$font-family-markers: 'shogun' ;
+$color-line-light: #efefef ;
+
+// animation
+$animation-delay: 0.5s ;
+
+// fonts
+$font-default: Roboto, Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+$font-size-big: 20px ;
+$font-size-medium: $font-size-big - 2px ;
+$font-size-small: $font-size-medium - 2px ;
+
+// border
+$border-radius: 0px ;
+
+// colors
+$color-offset: 25% ;
+$color-alpha-level: .5 ;
+
+$color-black: #000000;
+$color-black-alpha: rgba( $color-black, $color-alpha-level );
+$color-black-dark: darken( $color-black, $color-offset );
+$color-black-light: lighten( $color-black, $color-offset ) ;
+
+$color-white: white;
+$color-white-alpha: rgba( $color-white, $color-alpha-level );
+$color-white-dark: darken( $color-white, $color-offset );
+$color-white-light: lighten( $color-white, $color-offset ) ;
+
+$color-blue: #1890ff;
+$color-blue-dark: darken( $color-blue, $color-offset );
+$color-blue-light: lighten( $color-blue, $color-offset ) ;
+$color-blue-alpha: rgba( $color-blue, $color-alpha-level ) ;
+
+$color-yellow: #e6a104 ;
+
+$color-red: red ;
+$color-red-alpha: rgba( $color-red, $color-alpha-level );
+$color-red-dark: darken( $color-red, $color-offset );
+$color-red-light: lighten( $color-red, $color-offset );
+
+$color-green: #00ff0d ;
+$color-green-alpha: rgba( $color-green, $color-alpha-level );
+$color-green-dark: darken( $color-green, $color-offset );
+$color-green-light: lighten( $color-green, $color-offset );
+
+$color-violet: #660066 ;
+$color-violet-alpha: rgba( $color-violet, $color-alpha-level );
+$color-violet-dark: darken( $color-violet, $color-offset );
+$color-violet-light: lighten( $color-violet, $color-offset );
+
+$background-header: #fafafa;
+$header-color-text: #a5a5a5;
+$menu-background-color: $color-blue ;
+
+$color-gray: #878787;
+$color-gray-light: lighten( $color-gray, $color-offset );
+$color-gray-dark: darken( $color-gray, $color-offset );
+$color-gray-alpha: rgba( $color-gray, $color-alpha-level );
+
+$color-primary: $color-blue ;
+$color-primary-dark: darken( $color-primary, $color-offset ) ;
+$color-primary-light: lighten( $color-primary, $color-offset ) ;
+$color-primary-alpha: rgba( $color-blue, $color-alpha-level );
+
+$color-secondary: $color-green ;
+$color-success: $color-blue ;
+$color-danger: $color-red ;
+$color-warning: $color-yellow ;
+$color-info: $color-blue ;
+
+$width-container: 1140px;
+$margin-top-container: 100px;
+
+$shadow: 0 .5em .5em rgba( $color-black, .1);

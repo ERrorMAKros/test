@@ -1,0 +1,5 @@
+@import '../styles/mixins' ;
+
+$font-family-name: 'Compact' ;
+@font-face { @include defaults-font-face( $font-family-name, '/fonts/compact.ttf' ) }
+[class^=#{ $font-family-name } ] { @include defaults-font( $font-family-name ) }

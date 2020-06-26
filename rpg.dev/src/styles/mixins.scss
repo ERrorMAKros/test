@@ -1,0 +1,27 @@
+$small: 320px;
+$large: 1024px;
+
+@mixin defaults-font( $name ) {
+  display: inline-block;
+  font-family: $name ;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin defaults-font-face( $name, $url ) {
+  @include defaults-font( $name ) ;
+  src: url( $url ) format('truetype') ;
+}
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $small + 1) and (max-width: $large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $large) { @content; }
+  }
+}
