@@ -60,7 +60,7 @@
 		"less": "^2.7.2",
 		"less-loader": "^4.0.4",
 		"lodash": "^4.17.15",
-		"moment": "^2.19.1",
+		"moment": "^2.29.2",
 		"prettier": "^1.5.2",
 		"prop-types": "^15.5.10",
 		"qrcode.react": "^0.7.2",
